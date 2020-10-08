@@ -1,3 +1,4 @@
+
 // Using a promise to remove message after 3 seconds
 const handleMessage = () => {
     return new Promise(resolve => {
@@ -9,12 +10,13 @@ const handleMessage = () => {
 //Function for removing message after promise is finished
 const removeMessage = async () => {
     const remove = await handleMessage();
-    if (remove) {{}
+    if (remove) {
         if(document.getElementById("message")){
             document.getElementById("message").remove();
         }
     }
 }
+
 
 // Function for creating and displaying errormessage. Three parameters is used, the message, if a timmer should be used, and the parentelement
 const message = (message, timer, parentElement) => {
@@ -24,6 +26,7 @@ const message = (message, timer, parentElement) => {
             document.getElementById('message').lastChild.remove();
         }
     }
+
     if (!document.getElementById('message')) {
         let element = document.createElement("div");
         element.id = "message";
@@ -52,9 +55,10 @@ const message = (message, timer, parentElement) => {
             removeMessage();
         }
     }
-
-
 }
+
+
+
 
 // Eventlistener for validating the formdata
 document.getElementById("course").addEventListener('submit', function (e) {
@@ -92,6 +96,7 @@ document.getElementById("course").addEventListener('submit', function (e) {
         addData(...formvalue);
     }
 });
+    
 document.getElementById("close").addEventListener("click", function () {
     if (confirm("säker på att du vill avbryta?")) {
         document.getElementById("edit_form").style.display = "none";
