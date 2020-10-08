@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurser</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header>
+    </header>
+
+    <!-- Start of wrapper-->
+    <div id="wrapper">
+        <section id="courses">
+            <h2>Kurser som jag läst:</h2>
+        </section>
+        <form id="course">
+            <h3>Lägg till en kurs:</h3>
+            <div>
+                <label for="courseID">Kurskod:</label>
+                <input type="text" name="kurskod" id="courseID">
+                <label for="coursename">Kursnamn:</label>
+                <input type="text" name="kursnamn" id="coursename">
+            </div>
+            <div>
+                <label for="progression">Progression:</label>
+                <input type="text" name="progression" id="progression">
+                <label for="courseSyllabus">Kursplan:</label>
+                <input type="url" name="kursplan" id="courseSyllabus">
+            </div>
+
+            <input type="submit" value="Lägg till kurs" id="addCourse">
+        </form>
+
+        <section id="edit_form">
+        <form id="course_edit">
+            <h3>ändra kurs </h3>
+            <span id="close">&#10005;</span>
+            <div>
+                <label for="edit_courseID">Kurskod:</label>
+                <input type="text" name="edit_courseID" id="edit_courseID">
+                <label for="edit_coursename">Kursnamn:</label>
+                <input type="text" name="edit_coursename" id="edit_coursename">
+            </div>
+            <div>
+                <label for="edit_progression">Progression:</label>
+                <input type="text" name="edit_progression" id="edit_progression">
+                <label for="edit_courseSyllabus">Kursplan:</label>
+                <input type="url" name="edit_courseSyllabus" id="edit_courseSyllabus">
+            </div>
+
+            <input type="submit" value="Ändra kurs" id="editCourse">
+        </form>
+    </section>
+        <!--End of wrapper-->
+    </div>
+    <footer>
+    </footer>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

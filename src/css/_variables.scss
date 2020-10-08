@@ -1,0 +1,25 @@
+
+$marginAuto:  0 auto;
+    
+// Mixin for flex with row and column direction
+@mixin flex($direction){
+    display:flex;
+    flex-wrap: wrap;
+    @if $direction == row{
+        flex-direction: row;
+    } 
+    @else if $direction == column{
+        flex-direction: row;
+    }
+}
+
+// Mixin for media quries 
+@mixin screen-size($size) {
+    @if $size == phone{
+        @media (max-width: 899px) { @content; }
+    }
+    @else if $size == desktop{
+        @media(min-width:900px) {@content;}
+    }
+    
+}

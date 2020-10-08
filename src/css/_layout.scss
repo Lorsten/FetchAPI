@@ -1,0 +1,218 @@
+
+@import 'variables';
+
+
+// Wrapper
+#wrapper{
+    height:auto;
+    width:80%;
+    margin: $marginAuto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    @include screen-size(phone){
+        width:100%;
+    }
+    @include screen-size(desktop) {
+        max-width: 1200px;
+    }
+
+    section{
+ 
+        width:78%;
+        margin:5% auto 5% auto;
+        grid-column: 1/13;
+        @include screen-size(phone){
+            width:95%;
+        }
+        padding:1%;
+        background-color: #DAE5EC;
+        table{
+            width:100%;
+            td,th{
+                text-align: left;
+                padding:0.5% 0 0.5% 0;
+                @include screen-size(phone){
+                display: block;
+                margin-bottom: 1%;
+                }
+            }
+               // Setting the table header outside the screen with position absolute
+                th{
+                    @include screen-size(phone){
+                        position: absolute;
+                        top:-9999px;
+                        left:-9999px;
+             
+                    }
+            }
+           td{
+                border-bottom: 1px solid black;
+                @include screen-size(phone){
+                    padding-left:50%;
+                    position: relative;
+                    &:before{
+                        position: absolute;
+                        top:6px;
+                        left:6px;
+                        width:45%;
+                        white-space: nowrap;
+            
+                    }
+                    // Adding table headline as content before every td: 
+                    &:nth-of-type(1):before{content:"KursID";}
+                    &:nth-of-type(2):before{content:"Kursnamn";}
+                    &:nth-of-type(3):before{content:"progression";}
+                    &:nth-of-type(4):before{content:"kursplan";}
+                    &:nth-of-type(5):before{content:"Ändra";}
+                    &:nth-of-type(6):before{content:"Radera";}
+                }
+            }
+            td:last-of-type{
+                margin-bottom: 10%;
+            }
+            // Edit button
+            .edit{
+                cursor: pointer;
+                &:hover{
+                    opacity:0.8;
+                }
+            }
+            // Remove button
+            .remove{
+                cursor: pointer;
+                &:hover{
+                    color:red;
+                }
+            }
+        }
+        
+    }
+    // Section for the edit form using position fixed and Javascript for displaying it
+    #edit_form{
+        display: none;
+        position: fixed;
+        left:0%;
+        top:0%;
+        margin-top: 0;
+        height:100vh;
+        width:100vw;
+        background-color: rgba(0, 0, 0,0.7 );
+        // Form inside the section #edit_form
+        form{
+            background-color: #fff;
+            padding:2%;
+            position: relative;
+            @include screen-size(phone){
+                width:90%;
+                padding:4%;
+                margin:15% 5% 0 0%;
+     
+            }
+            h3{
+                width:100%;
+            }
+            span{
+                position: absolute;
+                top:2%;
+                right:2%;
+                font-size: 2em;
+                cursor: pointer;
+            }
+        }
+ 
+    }
+    // Regular form in wrapper
+    form{
+        grid-column: 1/13;
+        margin: $marginAuto;
+        width:80%;
+        @include flex(row);
+        h3 {
+            width:100%;
+        }
+        div{
+            @include screen-size(phone){
+                width:98%;
+            }
+            width:48%;
+            padding:1%
+        }
+        input[type=text],
+        input[type=url]
+        {
+            width:90%;
+            padding:1% 0 1% 0;
+            margin:1% 0 1% 0;
+            
+        }
+        label{
+            width:90%;
+        }
+        input[type=submit]{
+            width:20%;
+            margin-left:1%;
+            padding:1% 0 1% 0;
+            border:none;
+            outline: none !important;
+            @include screen-size(phone){
+                width:60%;
+                margin:5% 0 5% 0;
+                font-size: 1.1em;
+            }
+
+            &:hover{
+                background-color:#577FFD;
+                color:#fff;
+                transition: all 0.2s linear;
+            }
+        }
+    }
+   
+    // Style for the message container used for displaying errors
+    #message{
+        grid-column: 1/13;
+        background-color: rgba(214, 46, 89,0.9 );
+        padding:2% 0 2% 0;
+        margin:2% auto 0 auto;
+        @include screen-size(phone){
+            width:95%;
+            margin: 0 auto 10% auto;
+        }
+        width:80%;
+        opacity: 1;
+        animation: message-box 1s linear;
+        h3{
+            @include screen-size(phone){
+            font-size: 1.2em;
+            }
+            width:100%;
+            text-align: center;
+            color:#fff;
+        }
+        h4{
+            @include screen-size(phone){
+                font-size: 1.1em;
+                width:90%;
+                margin-left:5%;
+                margin-bottom: 5%;
+                }
+            width:40%;
+            text-align: left;
+            color:#fff;
+            margin:$marginAuto; 
+        }
+        
+    }
+    // Animation for the message container
+    @keyframes message-box {
+        0%{
+            opacity:0;
+        }
+        100%{
+            opacity: 1;
+        }
+        
+    }
+
+}
+
