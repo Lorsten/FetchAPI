@@ -1,6 +1,6 @@
 # SImple Fetch API
 
-## A simple javascript webb application using Fetch API to GET,POST,UPDATE and DELETE from a rest server
+## A simple javascript web application using Fetch API to GET,POST,UPDATE and DELETE from a rest server
 
 ## The project using GULP, use npminstall for installing
 
