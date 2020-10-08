@@ -1,4 +1,4 @@
-# SImple Fetch API
+# Simple Fetch API
 
 ## A simple javascript web application using Fetch API to GET,POST,UPDATE and DELETE from a rest server
 
