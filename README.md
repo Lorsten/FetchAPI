@@ -2,4 +2,4 @@
 
 
 
-### Auther Olof Andersson
+### Author Olof Andersson
