@@ -85,7 +85,6 @@ const manageImages = (done) =>{
 const jsTask = () => {
     return src(files.jsPath)
         .pipe(concat('main.js'))
-        .pipe(babel())
         .pipe(uglify())
         .pipe(dest('pub/js'))
 }
